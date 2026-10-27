@@ -1,0 +1,65 @@
+@import "tailwindcss" source("../");
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  --color-navy-950: #071426;
+  --color-navy-900: #0b1f3a;
+  --color-navy-800: #122b4f;
+  --color-navy-700: #1b3b69;
+  --color-navy-600: #24508c;
+  --color-brand-600: #1f5fbf;
+  --color-brand-500: #2f74d8;
+  --color-brand-100: #e3edfb;
+  --color-brand-50: #f1f6fd;
+
+  --color-ink: #0f1d33;
+  --color-muted: #5b6b82;
+  --color-line: #e2e7ef;
+  --color-canvas: #f5f7fa;
+
+  --color-ok-700: #13703f;
+  --color-ok-600: #1a8a4f;
+  --color-ok-50: #e9f6ef;
+  --color-warn-700: #8a5a00;
+  --color-warn-500: #d99400;
+  --color-warn-50: #fdf5e3;
+  --color-risk-700: #a32020;
+  --color-risk-600: #c62f2f;
+  --color-risk-50: #fdecec;
+}
+
+html {
+  color: var(--color-ink);
+  background: var(--color-canvas);
+}
+
+body {
+  @apply m-0 font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "tnum" 0;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+code,
+.mono {
+  font-family: var(--font-mono);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+.field {
+  @apply w-full rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100;
+}
+
+.label {
+  @apply mb-1 block text-xs font-medium uppercase tracking-wide text-muted;
+}
